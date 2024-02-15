@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 Console.WriteLine("Digite o número do Exercício:");
 int selecionador = Int32.Parse(Console.ReadLine());
@@ -53,23 +53,34 @@ switch (selecionador)
         break;
 
     case 2:
-
+        Console.WriteLine("Exercício 2 - Soma e Média selecionado!\n");
+        Console.WriteLine("Quantos números deseja informar? (de 3 a 10)");
+        int numInformados = Int32.Parse(Console.ReadLine());
+        double media = 0;
+        for(int i = 1;i <= numInformados;i++)
+        {
+            Console.WriteLine($"Informe o {i}º número:");
+            double temp = double.Parse(Console.ReadLine());
+            media += temp;
+        }
+        media = media / numInformados;
+        Console.WriteLine($"A média é de {media}");
     break;
 
     case 3:
-
+        Console.WriteLine("Exercício 3 - Jogar Dados selecionado!\n");
     break;
 
     case 4:
-
+        Console.WriteLine("Exercício 4 - Datas selecionado!\n");
     break;
 
     case 5:
-
+        Console.WriteLine("Exercício 5 - Conversão de Moedas selecionado!\n");
     break;
 
     case 6:
-
+        Console.WriteLine("Exercício 6 - Jogo da Forca selecionado!\n");
     break;
 }
  
