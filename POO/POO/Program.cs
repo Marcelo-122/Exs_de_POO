@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 Console.WriteLine("Digite o número do Exercício:");
 int selecionador = Int32.Parse(Console.ReadLine());
@@ -12,7 +14,7 @@ switch (selecionador)
         while (selecionadorCal != "0")
         {
             Console.WriteLine("\nSelecione a operação a ser realizada:");
-            Console.WriteLine("1:Somar \n2:Subtrair \n3:Multiplicar \n4:Dividir \n0:Sair");
+            Console.WriteLine("1:Somar \n2:Subtrair \n3:Multiplicar \n4:Dividir \n5:Resto \n6:Potenciação \n0:Sair");
             selecionadorCal = Console.ReadLine();
             
             if(selecionadorCal != "0") {  
@@ -47,6 +49,15 @@ switch (selecionador)
                         else
                             Console.WriteLine("Não é possível realizar a divisão!");
                         break;
+                    case "5":
+                        double resto = valor1 % valor2;
+                        Console.WriteLine($"O resultado do resto é {resto}");
+                        break;
+
+                    case "6":
+                        double potencia = Math.Pow(valor1,valor2);
+                        Console.WriteLine($"O resultado de {valor1} elevado a {valor2} é {potencia}");
+                        break;
                 }
             }
         }
@@ -56,15 +67,15 @@ switch (selecionador)
         Console.WriteLine("Exercício 2 - Soma e Média selecionado!\n");
         Console.WriteLine("Quantos números deseja informar? (de 3 a 10)");
         int numInformados = Int32.Parse(Console.ReadLine());
-        double media = 0;
-        for(int i = 1;i <= numInformados;i++)
-        {
-            Console.WriteLine($"Informe o {i}º número:");
-            double temp = double.Parse(Console.ReadLine());
-            media += temp;
+        if(numInformados >= 3 &&  numInformados <= 10) { 
+        List<double> list = new List<double>();
+
+            for (int i = 0; i < list.Count; i++) {
+                double numLista = double.Parse(Console.ReadLine());
+                list.Add(numLista);
+            }
+
         }
-        media = media / numInformados;
-        Console.WriteLine($"A média é de {media}");
     break;
 
     case 3:
